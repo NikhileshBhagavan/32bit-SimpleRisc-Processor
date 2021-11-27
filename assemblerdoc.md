@@ -19,8 +19,6 @@ Loads value from memory.
 ```
 load [Destination] [Source]
 load r3 r2
-
-
 ```
 
 ### Store
@@ -36,8 +34,6 @@ Move data from one register to another.
 ```
 mov [Destination] [Source]
 mov r3 r2
-
-
 ```
 
 
@@ -45,7 +41,6 @@ mov r3 r2
 Jump to particular address[PC+offset].
 ```
 b offset
-
 ```
 
 
@@ -53,16 +48,12 @@ b offset
 Jump to particular address[PC+offset] if  flags.E is 1.
 ```
 beq offset
-
-
 ```
 
 ### branch if greater
 Jump to particular address[PC+offset] if  flags.GT is 1.
 ```
 bgt offset
-
-
 ```
 ### Nop  
 Do Nothing
@@ -103,5 +94,4 @@ If Source1 == Source2 then flags.E is set.
 ```
 cmp [source1] [source2]
 cmp r1 r2
-
 ```
