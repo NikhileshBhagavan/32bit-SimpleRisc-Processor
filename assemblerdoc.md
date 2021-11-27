@@ -83,7 +83,6 @@ Invert bits and store to destination register.
 not [destination] [source]
 ```
 
-```
 
 ### Cmp
 Compares two values and sets flag register. 
