@@ -1,8 +1,9 @@
 # Assembler Documentation
 ## Assembling Programs
 1. To run programs on the processor, first assemble the memory image.
+2. Write an assembly programme in [TestCase](32bit-SIMPLERISCPROCESSOR/assembler/TestCase.asm "TestCase)
 ```
-Write an assembly programme in [TestCase](32bit-SIMPLERISCPROCESSOR/assembler/TestCase.asm "TestCase)
+
 python assembler.py inputfilename [outputfilename]
 ```
 2. Load the memory image inside logism by right clicking on the RAM module and selecting `Load Image...`  
