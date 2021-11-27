@@ -19,22 +19,26 @@
 ### Register Instructions
  OpCode | Immediate Bit | Operation | RTN  
 ---  | :---:|:---:|:---:
-0000 | 0 | Halt 			| ```                               ``` |
-0001 | 0 | Load 			| ```RC <-- [[RB]]                  ``` |
+00000 | 0 | Add       		| ```RC <-- [RA]+[RB]               ``` |
+00001 | 0 | Subtract         | ```RC <-- [RA]-[RB]               ``` |
+00010 | 0 | Multiplication         | ```RC <-- [RA]*[RB]               ``` |
+00011 | 0 | Division 			| ```RC <-- [RA]/[RB]                 ``` |
+00100 | 0 | Mod 			| ```RC <-- [RA]%[RB]                 ``` |
+00101 | 0 | Compare        	| ```flags.GT <-- [RA]>[RB], flags.E<--[RA]==[RB]```|
 0010 | 0 | Store            | ```[RA] <-- [RB]                  ``` |
 0011 | 0 | Move 			| ```RC <-- RA                      ``` |
 0100 | 0 | Jump	        	| ```PC <-- [RB]                    ``` |
 0101 | 0 | Jump If Zero     | ```PC <-- [RB] if Z=1             ``` |
 0110 | 0 | Jump If Carry    | ```PC <-- [RB] if C=1             ``` |
 0111 | 0 | No Op    		| ```                               ``` |
-1000 | 0 | Add       		| ```RC <-- [RA]+[RB]               ``` |
-1001 | 0 | Subtract         | ```RC <-- [RA]-[RB]               ``` |
+
+
 1010 | 0 | And       		| ```RC <-- [RA] AND [RB]           ``` |
 1011 | 0 | OR       		| ```RC <-- [RA] OR [RB]            ``` |
 1100 | 0 | NOT       		| ```RC <-- NOT [RA]                ``` |
 1101 | 0 | XOR       		| ```RC <-- [RA] XOR [RB]           ``` |
 1110 | 0 | Random Number    | ```RC <-- Random                  ``` |
-1111 | 0 | Compare        	| ```C <-- [RA]>[RB], Z<--[RA]==[RB]```|
+
 ### Immediate Instructions
  OpCode | ImmediateBit | Operation | RTN  
 ---  | :---:|:---:|:---:
