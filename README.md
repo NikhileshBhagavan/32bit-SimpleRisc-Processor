@@ -1,5 +1,8 @@
-# Design and Simulation of 32bit SIMPLERISC PROCESSOR using  [Logism](http://www.cburch.com/logisim/) 
+# Design and Simulation of 32bit SIMPLERISC PROCESSOR using  [Logism](http://www.cburch.com/logisim/).
 
+![image](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=red)
+
+## Getting Started
 ![CPU](32bit-SIMPLERISCPROCESSOR/Circuit_images/processor.jpeg "CPU")
 
 ## Documentaion
