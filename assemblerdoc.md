@@ -1,25 +1,18 @@
 # Assembler Documentation
 ## Assembling Programs
 1. To run programs on the processor, first assemble the memory image.
-2. Write an assembly programme in [TestCase](32bit-SIMPLERISCPROCESSOR/assembler/TestCase.asm "TestCase)
-```
 
-python assembler.py inputfilename [outputfilename]
+```
+->Write an assembly programme in 32bit-SIMPLERISCPROCESSOR/assembler/TestCase.asm 
+->javac assembler.java 
+->java assembler
+->A new file named "assembleroutput" will be created which is memory image
 ```
 2. Load the memory image inside logism by right clicking on the RAM module and selecting `Load Image...`  
 - The programs are loaded at starting address 0x0000
 - Each instruction in the assembly language takes up one memory word of 32-bit.
 ## Assembler Language Commands
-### Comments
-Comments start with `#`. Any content after a `#` is ignored.
-```
-# This is a comment.
-```
-### Halt  
-Halts the processor. To resume click the reset button.
-```
-halt
-```
+
 
 ### Load  
 Loads value from memory.
@@ -27,8 +20,7 @@ Loads value from memory.
 load [Destination] [Source]
 load r3 r2
 
-loadi [Destination] Immediate
-loadi r3 0xabcd
+
 ```
 
 ### Store
@@ -45,40 +37,32 @@ Move data from one register to another.
 mov [Destination] [Source]
 mov r3 r2
 
-movi [Destination] ImmediateValue
-movi r3 0xabcd
+
 ```
 
 
-### Jump  
-Jump to particular address. 
+### branch 
+Jump to particular address[PC+offset].
 ```
-jmp [Register with address]
-jmp r5
+b offset
 
-jmpi ImmediateAddress
-jmpi 0xabcd
 ```
 
 
-### Jump if Zero  
-Jump to particular address if zero flag is set.
+### branch if equal
+Jump to particular address[PC+offset] if  flags.E is 1.
 ```
-jz [Register with address]
-jz r6
+beq offset
 
-jzi ImmediateAddress
-jzi 0xabcd
+
 ```
 
-### Jump if Carry  
-Jump to particular address if carry flag is set.
+### branch if greater
+Jump to particular address[PC+offset] if  flags.GT is 1.
 ```
-jc [Register with address]
-jc r7
+bgt offset
 
-jci ImmediateAddress
-jci 0xabcd
+
 ```
 ### Nop  
 Do Nothing
@@ -86,7 +70,7 @@ Do Nothing
 nop
 ```
 
-### Add, Subtract, And, Or, XOR
+### Add, Subtract, And, Or, XOR, XNOR
 Perform the arithmetic opration and store result to destination register
 
 ```
@@ -97,12 +81,9 @@ sub r3 r1 r2
 and r3 r1 r2
 or  r3 r1 r2
 xor r3 r1 r2
+xnor r3 r1 r2
 
-opi [destination] [source1] Immediate Value
-subi r3 r1 0x12de
-andi r3 r1 0x12de
-ori  r3 r1 0x12de
-xori r3 r1 0x12de
+
 ```
 
 ### Not
@@ -111,23 +92,16 @@ Invert bits and store to destination register.
 not [destination] [source]
 ```
 
-### Rnd
-Generate a random number and store it to destination register
-```
-rnd [destination]
-rnd r1
 ```
 
 ### Cmp
 Compares two values and sets flag register. 
 ```
-If Source1 > Source2 then Carry flag is set.
-If Source1 == Source2 then Zero flag is set.
+If Source1 > Source2 then  flags.GT is set.
+If Source1 == Source2 then flags.E is set.
 ```
 ```
 cmp [source1] [source2]
 cmp r1 r2
 
-cmpi [source1] [source2]
-cmpi r1 0xffff
 ```
