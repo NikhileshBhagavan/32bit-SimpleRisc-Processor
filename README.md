@@ -1,4 +1,4 @@
-# Design and Simulation of 32bit SIMPLERISC PROCESSOR using  [Logism](http://www.cburch.com/logisim/).
+# Design and Simulation of 32bit SIMPLERISC PROCESSOR using  [Logisim](http://www.cburch.com/logisim/).
 
 
 ![CPU](32bit-SIMPLERISCPROCESSOR/Circuit_images/processor.jpeg "CPU")
